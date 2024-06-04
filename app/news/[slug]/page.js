@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DUMMY_NEWS } from "@/dummy-news";
 
@@ -14,7 +15,9 @@ function NewsDetailPage({ params }) {
     return (
         <article className="news-article">
             <header>
-                <img src={`/images/news/${image}`} />
+                <Link href={`/news/${newsItem.slug}/image`}>
+                    <img src={`/images/news/${image}`} />
+                </Link>
                 <h1>{title}</h1>
                 <time dateTime={date}>{date}</time>
             </header>
